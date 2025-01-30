@@ -78,10 +78,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     steps: 
-      - name: checkout code
+      - name: Checkout code code
         uses: actions/checkout@v2
-      - name: create docs folder
-        uses: mkdir docs
+      - name: Create pages directory
+        run: mkdir docs
       - name: convert md to html
         uses: docker://pandoc/core:2.9
         with:
@@ -91,5 +91,4 @@ jobs:
         with:
           folder: docs
           branch: gh-pages
-      
           
